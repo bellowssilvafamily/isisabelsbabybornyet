@@ -17,12 +17,31 @@
       }
 
       h1 {
-        font-size: 100px;
+        margin: 0 0 0.5em;
+        font-size: 200px;
+        font-family: "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 100;
+        word-break: break-word;
+        text-align: center;
       }
 
       button {
         font-size: 30px;
-        padding: 0.25em 1em;
+        padding: 0.5em 2em;
+        border-radius: 10px;
+        border: 2px solid #aaa;
+      }
+
+      @media screen and (max-width: 650px) {
+        h1 {
+          font-size: 100px;
+        }
+
+        button {
+          font-size: 25px;
+          padding: 1em 1.5em;
+        }
       }
 
       .hidden {
@@ -40,7 +59,6 @@
     <script>
       const checkingMsgs = [
         'Checking',
-        'Asking',
         'Asking again',
         'Texting Isabel',
         'Calling Ken',
