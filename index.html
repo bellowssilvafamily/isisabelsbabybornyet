@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Isabel's Baby Born Yet?</title>
+    <style>
+      body {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 100px;
+      }
+
+      button {
+        font-size: 30px;
+        padding: 0.25em 1em;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1 id="nope">Nope.</h1>
+    <button>Check Again</button>
+    <h1 id="checking" class="hidden"></h1>
+
+    <script>
+      const checkingMsgs = [
+        'Checking',
+        'Asking',
+        'Asking again',
+        'Texting Isabel',
+        'Calling Ken',
+        'Bothering the parents',
+        'Pestering the siblings',
+        'Peeking through their windows',
+        'Calling the hospital'
+      ]
+      let msgIndex = 0
+      const nope = document.getElementById('nope')
+      const checking = document.getElementById('checking')
+      const btn = document.querySelector('button')
+      btn.onclick = () => {
+        checking.textContent = checkingMsgs[msgIndex] + '...'
+        msgIndex = (msgIndex + 1) % checkingMsgs.length
+
+        nope.classList.add('hidden')
+        btn.classList.add('hidden')
+        checking.classList.remove('hidden')
+
+        setTimeout(() => {
+          nope.classList.remove('hidden')
+          btn.classList.remove('hidden')
+          checking.classList.add('hidden')
+        }, 2000)
+      }
+    </script>
+  </body>
+</html>
